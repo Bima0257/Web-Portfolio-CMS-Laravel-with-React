@@ -1,0 +1,102 @@
+@import 'variables';
+
+/* ===============================
+   LIGHT THEME (default)
+=================================*/
+:root {
+  /* generate brand colors */
+  @each $name, $value in $theme-colors {
+    --#{$name}: #{$value};
+  }
+
+  --glow-main: rgba(0, 100, 200, 0.4);
+  --glow-strong: rgba(0, 120, 255, 0.7);
+
+  /* base UI */
+  --color-bg: #f0f4f8;
+  --color-surface: #ffffff;
+  --color-surface-2: #{$gray-100};
+
+  --color-text: #102a43;
+  --color-border: #{$gray-300};
+
+  /* semantic */
+  --color-primary: var(--primary);
+  --color-span: var(--orange);
+
+  /* hero */
+  --hero-accent: var(--primary);
+  --hero-muted: rgba(0, 0, 0, 0.6);
+  --hero-line: rgba(0, 0, 0, 0.08);
+
+  /* ===== BUTTON ===== */
+
+  --btn-bg: #2b6cb0; /* Biru medium yang kuat */
+  --btn-text: #ffffff;
+  --btn-border: #2b6cb0;
+
+  --btn-hover-bg: #1e4e8c; /* Lebih gelap saat hover */
+  --btn-hover-border: #1e4e8c;
+
+  /* Outline Button */
+  --btn-outline-bg: #f0f4f8;
+  --btn-outline-text: #2d3748; /* Abu-abu gelap agar terbaca */
+  --btn-outline-border: #dbe1e7;
+
+  --btn-outline-hover-bg: #e2e8f0;
+  --btn-outline-hover-text: #2b6cb0;
+}
+
+/* ===============================
+   DARK THEME
+=================================*/
+.dark {
+  /* brand colors (dark variants) */
+  --primary: #7dd3fc;
+  --secondary: #9ca3af;
+  --success: #86efac;
+  --info: #67e8f9;
+  --warning: #fdba74;
+  --danger: #fca5a5;
+  --light: #182235;
+  --dark: #0b1220;
+  --orange: #ffb37a;
+  --blue: #0b363d;
+
+  --glow-main: rgba(0, 180, 255, 0.7);
+  --glow-strong: rgba(0, 255, 220, 1);
+
+  /* base UI */
+  --color-bg: #0b1220;
+  --color-surface: rgba(20, 24, 34, 0.75);
+  --color-surface-2: #182235;
+
+  --color-text: #f1f5f9;
+  --color-border: #1e293b;
+
+  /* semantic */
+  --color-primary: var(--primary);
+  --color-span: var(--color-text);
+
+  /* hero */
+  --hero-accent: var(--primary);
+  --hero-muted: rgba(230, 237, 243, 0.7);
+  --hero-line: rgba(125, 211, 252, 0.2);
+
+  /* ===== BUTTON ===== */
+  --btn-bg: #38bdf8;
+  --btn-text: #f1f5f9;
+  --btn-border: #38bdf8;
+
+  --btn-hover-bg: #7dd3fc;
+  --btn-hover-border: #7dd3fc;
+
+  /* Outline Button */
+  --btn-outline-bg: #0b1220;
+  --btn-outline-text: #f0f4f8;
+  --btn-outline-border: #334155;
+
+  --btn-outline-hover-bg: rgba(56, 189, 248, 0.1);
+  --btn-outline-hover-text: #38bdf8;
+  --btn-outline-hover-border: #38bdf8;
+}

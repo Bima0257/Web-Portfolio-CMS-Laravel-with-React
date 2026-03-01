@@ -1,0 +1,30 @@
+/* GLASS CARD */
+.glass-card {
+  border: none;
+  border-radius: 20px;
+  background: var(--color-surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* TEXT */
+.company-name {
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.date-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--color-text);
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.6;
+}

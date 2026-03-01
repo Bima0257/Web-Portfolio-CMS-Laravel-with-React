@@ -1,0 +1,47 @@
+@use 'breakpoints' as bp;
+
+@mixin up($size) {
+  @if $size == mobile {
+    @media (min-width: bp.$mobile) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: bp.$tablet) {
+      @content;
+    }
+  } @else if $size == laptop {
+    @media (min-width: bp.$laptop) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: bp.$desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin down($size) {
+  @if $size == mobile {
+    @media (max-width: bp.$mobile) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (max-width: bp.$tablet) {
+      @content;
+    }
+  } @else if $size == laptop {
+    @media (max-width: bp.$laptop) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (max-width: bp.$desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}

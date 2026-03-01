@@ -1,0 +1,191 @@
+/* ===============================
+   EDUCATION SECTION
+=================================*/
+#education {
+  position: relative;
+}
+
+/* ===============================
+   GLASS CARD (EDUCATION)
+=================================*/
+.education-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 0 22px var(--glow-main);
+}
+
+/* ===============================
+   TEXT
+=================================*/
+.education-card .color-text {
+  color: var(--color-text);
+}
+
+.education-card .date-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.education-card p {
+  color: var(--color-text);
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ===============================
+   CARD CONTENT LAYOUT
+=================================*/
+.education-card .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.education-card .card-body p:last-child {
+  margin-top: auto;
+}
+
+/* ===============================
+   MOBILE (≤575px)
+=================================*/
+@media (max-width: 575px) {
+  #education {
+    padding-top: 40px;
+  }
+
+  .education-card {
+    border-radius: 16px;
+  }
+
+  .education-card .card-body {
+    padding: 18px !important;
+  }
+
+  .education-card h5 {
+    font-size: 16px;
+  }
+
+  .education-card h6 {
+    font-size: 14px;
+  }
+
+  .education-card .date-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .education-card p {
+    font-size: 14px;
+  }
+}
+
+/* ===============================
+   TABLET (576px — 991px)
+=================================*/
+@media (min-width: 576px) and (max-width: 991px) {
+  .education-card .card-body {
+    padding: 20px !important;
+  }
+
+  .education-card h5 {
+    font-size: 17px;
+  }
+
+  .education-card h6 {
+    font-size: 15px;
+  }
+}
+
+/* ===============================
+   DESKTOP BESAR (≥1200px)
+=================================*/
+@media (min-width: 1200px) {
+  .education-card {
+    border-radius: 22px;
+  }
+
+  .education-card .card-body {
+    padding: 26px !important;
+  }
+
+  .education-card h5 {
+    font-size: 18px;
+  }
+
+  .education-card h6 {
+    font-size: 16px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* optional stagger */
+.reveal:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.reveal:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.education-illustration {
+  width: 100%;
+  max-width: 300px;
+  padding: 14px;
+  border-radius: 16px;
+
+  /* surface */
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: all 0.25s ease;
+}
+
+.education-illustration:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 0 22px var(--glow-main);
+}
+
+/* ukuran svg dalam lottie */
+.education-illustration svg {
+  width: 100% !important;
+  height: 200px !important;
+}
+
+@media (max-width: 991px) {
+  .education-illustration {
+    margin-bottom: 24px;
+  }
+}

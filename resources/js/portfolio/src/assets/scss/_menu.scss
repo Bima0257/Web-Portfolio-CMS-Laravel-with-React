@@ -1,0 +1,189 @@
+@use 'mixins' as m;
+
+/* =========================
+   NAVBAR BASE
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+
+  /* LOGO */
+  .logo a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  /* TOGGLER */
+  .navbar-toggler {
+    color: var(--primary);
+    font-size: 16px;
+    border: none;
+    padding: 6px 10px;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  /* NAV LINKS */
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: var(--color-text);
+        padding: 20px 16px;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &.active {
+          color: var(--primary);
+        }
+
+        /* tablet ke bawah */
+        @include m.mobile-only {
+          padding: 12px 8px;
+          font-size: 15px;
+          border-bottom: 1px solid var(--color-border);
+        }
+      }
+
+      /* hilangkan border di item terakhir */
+      &:last-child .nav-link {
+        @include m.mobile-only {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+
+
+  /* THEME TOGGLE BUTTON */
+  .btn,
+  .theme-toggle {
+    color: var(--color-text);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+/* =========================
+   NAV ACTIONS
+========================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include m.mobile-only {
+    gap: 6px;
+  }
+}
+
+/* =========================
+   STICKY NAVBAR
+========================= */
+
+.navbar.nav-sticky {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@include m.mobile-only {
+  .navbar {
+    background: var(--color-bg);
+
+    /* dropdown menu mobile */
+    .navbar-collapse {
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 8px 0 16px;
+      margin-top: 4px;
+    }
+
+    /* full width nav item di mobile */
+    .navbar-nav {
+      width: 100%;
+
+      .nav-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+html.dark .navbar {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+html.dark .navbar.nav-sticky {
+  background: var(--color-surface);
+}
+
+html.dark .navbar .navbar-collapse {
+  @include m.mobile-only {
+    background: var(--color-surface);
+  }
+}
+
+/* =========================
+   HIGHLIGHT LINK
+========================= */
+
+.navbar .nav-link.highlight {
+  color: var(--primary);
+}
+
+html:not(.dark) .navbar .navbar-nav .nav-item .nav-link {
+  &:hover,
+  &.active {
+    color: var(--color-span);
+  }
+}

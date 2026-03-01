@@ -1,0 +1,242 @@
+/* ===============================
+   SECTION PROJECT
+=================================*/
+#projects {
+  position: relative;
+}
+
+/* ===============================
+   TITLE
+=================================*/
+.main-title {
+  color: var(--hero-accent);
+  font-weight: 600;
+}
+
+.span-title {
+  color: var(--color-span);
+  position: relative;
+}
+
+.project-desc {
+  color: var(--color-text);
+  max-width: 500px;
+}
+
+/* ===============================
+   PROJECT CARD
+=================================*/
+.project-card {
+  cursor: pointer;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 18px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 0 22px var(--glow-main);
+}
+
+/* ===============================
+   THUMBNAIL
+=================================*/
+.project-thumbnail {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* pakai rasio biar konsisten */
+.project-thumbnail img,
+.thumbnail-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+/* placeholder */
+.thumbnail-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+/* ===============================
+   TEXT
+=================================*/
+.project-card h3 {
+  color: var(--hero-accent);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.color-text {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+/* ===============================
+   CARD BOTTOM
+=================================*/
+.project-card__bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===============================
+   CATEGORY BADGE
+=================================*/
+.project-badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--btn-bg);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+/* ===============================
+   DEMO BUTTON
+=================================*/
+.project-demo-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  transition: all 0.25s ease;
+}
+
+.project-demo-btn:hover {
+  transform: translateY(-2px);
+}
+
+.project-demo-btn:hover .arrow-demo {
+  filter: brightness(0) invert(1);
+}
+
+.arrow-demo {
+  width: 18px;
+  filter: brightness(0) invert(1);
+  transition: 0.2s ease;
+}
+
+/* ===============================
+   FILTER BUTTON — MOBILE SCROLL
+=================================*/
+.project-filter {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.project-filter::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* ===============================
+   MOBILE (≤575px)
+=================================*/
+@media (max-width: 575px) {
+  #projects {
+    padding-top: 40px;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .project-filter {
+    justify-content: center;
+  }
+
+  .project-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 16px;
+  }
+
+  .project-demo-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ===============================
+   TABLET (576px — 991px)
+=================================*/
+@media (min-width: 576px) and (max-width: 991px) {
+  .project-card {
+    padding: 16px;
+  }
+
+  .project-card h3 {
+    font-size: 17px;
+  }
+}
+
+/* ===============================
+   DESKTOP BESAR (≥1200px)
+=================================*/
+@media (min-width: 1200px) {
+  .project-card {
+    padding: 22px;
+  }
+
+  .project-card h3 {
+    font-size: 19px;
+  }
+}
+
+/* ===============================
+   SCROLL POP UP ANIMATION
+=================================*/
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delay bertahap biar lebih hidup */
+.reveal:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.reveal:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.reveal:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.reveal:nth-child(6) {
+  transition-delay: 0.3s;
+}

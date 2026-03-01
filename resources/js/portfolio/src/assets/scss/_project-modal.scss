@@ -1,0 +1,132 @@
+.project-modal {
+  background: var(--color-bg);
+  .modal-dialog {
+    max-width: 720px;
+    margin: 1rem auto;
+  }
+
+  /* Tablet */
+  @media (max-width: 992px) {
+    .modal-dialog {
+      max-width: 90%;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 576px) {
+    .modal-dialog {
+      max-width: 95%;
+      margin: 0.5rem auto;
+    }
+
+    .modal-header {
+      padding: 1rem;
+
+      .modal-title {
+        font-size: 1.1rem;
+      }
+    }
+
+    .modal-body {
+      padding: 1rem;
+
+      img {
+        border-radius: 10px;
+      }
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      padding: 5px 10px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+    }
+  }
+
+  .modal-content {
+    background: var(--color-surface);
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 1.2rem 1.5rem;
+
+    .modal-title {
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 0.3px;
+      color: var(--color-text);
+    }
+
+    .btn-close {
+      opacity: 0.6;
+      transition: 0.2s ease;
+      filter: invert(1);
+
+      &:hover {
+        opacity: 1;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      transition: 0.25s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    p {
+      color: var(--color-text);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    font-weight: 500;
+    background: rgba(79, 70, 229, 0.1) !important;
+    color: #4f46e5;
+  }
+
+  .btn-primary {
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 500;
+    border: none;
+    color: white;
+    background: rgba(11, 54, 61, 0.75);
+    backdrop-filter: blur(10px);
+    transition: all 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

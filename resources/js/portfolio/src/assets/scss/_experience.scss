@@ -1,0 +1,199 @@
+/* ===============================
+   EXPERIENCE SECTION
+=================================*/
+#experience {
+  position: relative;
+}
+
+/* ===============================
+   GLASS CARD
+=================================*/
+.experience-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 0 22px var(--glow-main);
+}
+
+/* ===============================
+   TEXT
+=================================*/
+.company-name {
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.color-text {
+  color: var(--color-text);
+}
+
+.date-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.exp-description {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ===============================
+   CARD CONTENT LAYOUT
+=================================*/
+.experience-card .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.experience-card .card-body p {
+  margin-top: auto;
+}
+
+/* ===============================
+   MOBILE (≤575px)
+=================================*/
+@media (max-width: 575px) {
+  #experience {
+    padding-top: 40px;
+  }
+
+  .experience-card {
+    border-radius: 16px;
+  }
+
+  .experience-card .card-body {
+    padding: 18px !important;
+  }
+
+  .experience-card h5 {
+    font-size: 16px;
+  }
+
+  .experience-card h6 {
+    font-size: 14px;
+  }
+
+  .date-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .exp-description {
+    font-size: 14px;
+  }
+}
+
+/* ===============================
+   TABLET (576px — 991px)
+=================================*/
+@media (min-width: 576px) and (max-width: 991px) {
+  .experience-card .card-body {
+    padding: 20px !important;
+  }
+
+  .experience-card h5 {
+    font-size: 17px;
+  }
+
+  .experience-card h6 {
+    font-size: 15px;
+  }
+}
+
+/* ===============================
+   DESKTOP BESAR (≥1200px)
+=================================*/
+@media (min-width: 1200px) {
+  .experience-card {
+    border-radius: 22px;
+  }
+
+  .experience-card .card-body {
+    padding: 26px !important;
+  }
+
+  .experience-card h5 {
+    font-size: 18px;
+  }
+
+  .experience-card h6 {
+    font-size: 16px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.reveal:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.reveal:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.reveal:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+.experience-illustration {
+  width: 100%;
+  max-width: 300px;
+  padding: 14px;
+  border-radius: 16px;
+
+  /* surface */
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: all 0.25s ease;
+}
+
+.experience-illustration:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 0 22px var(--glow-main);
+}
+
+/* ukuran svg dalam lottie */
+.experience-illustration svg {
+  width: 100% !important;
+  height: 200px !important;
+}
+
+@media (max-width: 991px) {
+  .experience-illustration {
+    margin-bottom: 20px;
+  }
+}

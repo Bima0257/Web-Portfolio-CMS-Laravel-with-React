@@ -1,0 +1,109 @@
+/* ===============================
+   CONTACT RESPONSIVE FIX
+=================================*/
+
+/* jarak antar kolom section */
+#contact .row {
+  --bs-gutter-y: 1.5rem;
+}
+
+.contact-form-card,
+.contact-social-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.contact-form-card .contact-header {
+  margin-bottom: 10px;
+}
+
+.contact-social-card .contact-header {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+/* social item lebih compact */
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  height: 100%;
+  min-height: 58px;
+}
+
+.social-item:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 0 22px var(--glow-main);
+}
+
+.social-item svg {
+  flex-shrink: 0;
+}
+
+.social-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===============================
+   MOBILE
+=================================*/
+@media (max-width: 575px) {
+  .contact-form-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .contact-submit {
+    width: 100%;
+  }
+
+  .social-item {
+    min-height: 54px;
+    padding: 10px 12px;
+  }
+
+  .social-text {
+    font-size: 13px;
+  }
+}
+
+/* ===============================
+   TABLET
+=================================*/
+@media (min-width: 576px) and (max-width: 991px) {
+  .contact-form-card {
+    padding: 26px;
+  }
+}
+
+/* ===============================
+   DESKTOP
+=================================*/
+@media (min-width: 992px) {
+  .contact-form-card {
+    padding: 32px 36px;
+  }
+}

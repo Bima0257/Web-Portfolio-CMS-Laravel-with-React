@@ -1,0 +1,145 @@
+/* =========================
+   SKILL CARD BASE
+========================= */
+
+.skill-card {
+  cursor: pointer;
+  padding: 24px 16px;
+  border-radius: 12px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 0 22px var(--glow-main);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* default desktop icon */
+.skill-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+/* tablet */
+@media (max-width: 991px) {
+  .skill-icon svg {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* mobile */
+@media (max-width: 575px) {
+  .skill-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================
+   SKILL NAME
+========================= */
+
+.skill-name {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* tablet */
+@media (max-width: 991px) {
+  .skill-name {
+    font-size: 14px;
+  }
+}
+
+/* small phone */
+@media (max-width: 420px) {
+  .skill-name {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   CARD SPACING RESPONSIVE
+========================= */
+
+/* tablet */
+@media (max-width: 991px) {
+  .skill-card {
+    padding: 20px 14px;
+  }
+}
+
+/* mobile */
+@media (max-width: 575px) {
+  .skill-card {
+    padding: 18px 12px;
+    border-radius: 10px;
+  }
+}
+
+/* very small phone */
+@media (max-width: 420px) {
+  .skill-card {
+    padding: 16px 10px;
+  }
+}
+
+/* =========================
+   SECTION TYPOGRAPHY
+========================= */
+
+.main-title {
+  color: var(--hero-accent);
+}
+
+.span-title {
+  color: var(--color-span);
+}
+
+.skill-desc {
+  color: var(--color-text);
+  max-width: 520px;
+}
+
+/* mobile center alignment */
+@media (max-width: 991px) {
+  .skill-desc {
+    text-align: center;
+  }
+
+  .about-title {
+    text-align: center;
+  }
+
+  .title-sm {
+    text-align: center;
+  }
+}
+
+/* =========================
+   GRID BALANCE MOBILE
+========================= */
+
+/* HP kecil → card tidak terlalu mepet */
+@media (max-width: 575px) {
+  #skills .row {
+    row-gap: 14px;
+  }
+}

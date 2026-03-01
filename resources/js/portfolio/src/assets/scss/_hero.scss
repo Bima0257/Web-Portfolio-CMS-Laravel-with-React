@@ -1,0 +1,310 @@
+@use 'mixins' as m;
+
+/* =========================
+   HERO BASE
+========================= */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* garis utama */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  opacity: 0.1;
+
+  width: 70%;
+  height: 4px;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, transparent 0%, var(--glow-main) 20%, var(--glow-strong) 50%, var(--glow-main) 80%, transparent 100%);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* glow menyebar ke bawah */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+
+  width: 80%;
+  height: 20px;
+  border-radius: 50%;
+
+  background: radial-gradient(ellipse at center, var(--glow-strong) 0%, transparent 70%);
+
+  opacity: 0.8;
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+.hero-title {
+  color: var(--hero-accent);
+  line-height: 1.3;
+  font-size: 28px;
+  text-align: center;
+
+  @include m.up(tablet) {
+    font-size: 36px;
+  }
+  @include m.up(laptop) {
+    font-size: 48px;
+  }
+}
+
+.hero-expertise {
+  color: var(--hero-accent);
+}
+
+.text-line::after {
+  background: var(--hero-line);
+}
+
+.hero-desc {
+  color: var(--color-text);
+  border-left: 3px solid var(--hero-accent);
+  background: var(--color-surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+
+  @include m.up(tablet) {
+    font-size: 15px;
+  }
+  @include m.up(laptop) {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   HERO SPACING
+========================= */
+.bg-img-7 {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0;
+  min-height: 520px;
+
+  @include m.up(tablet) {
+    padding: 120px 0;
+    min-height: 650px;
+  }
+
+  @include m.up(laptop) {
+    padding: 200px 0;
+    min-height: auto;
+  }
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+.phone-img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 70%;
+  max-width: 260px;
+
+  mask-image: linear-gradient(to bottom, var(--color-bg) 78%, var(--color-bg) 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, var(--color-bg) 78%, var(--color-bg) 88%, transparent 100%);
+
+  @include m.up(tablet) {
+    width: 80%;
+    max-width: 320px;
+  }
+
+  @include m.up(laptop) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   RESPONSIVE GLOW DIVIDER
+========================= */
+
+/* MOBILE default */
+.hero-section::after {
+  width: 55%;
+  height: 3px;
+  opacity: 0.18;
+}
+
+.hero-section::before {
+  width: 65%;
+  height: 14px;
+  bottom: -6px;
+  opacity: 0.5;
+  filter: blur(6px);
+}
+
+/* TABLET */
+@include m.up(tablet) {
+  .hero-section::after {
+    width: 65%;
+    height: 4px;
+    opacity: 0.15;
+  }
+
+  .hero-section::before {
+    width: 75%;
+    height: 18px;
+    bottom: -8px;
+    opacity: 0.65;
+    filter: blur(7px);
+  }
+}
+
+/* LAPTOP / DESKTOP */
+@include m.up(laptop) {
+  .hero-section::after {
+    width: 70%;
+    height: 4px;
+    opacity: 0.1;
+  }
+
+  .hero-section::before {
+    width: 80%;
+    height: 20px;
+    bottom: -8px;
+    opacity: 0.8;
+    filter: blur(8px);
+  }
+}
+
+.main-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* mobile center */
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* jarak antar tombol biar rapi saat wrap */
+.main-btn .btn {
+  margin: 6px;
+  color: var(--btn-text);
+}
+
+/* tablet ke atas balik ke kiri */
+@include m.up(tablet) {
+  .main-btn {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* =========================
+   DECORATION
+========================= */
+
+/* floating base */
+.floating {
+  position: absolute;
+  animation: up-down-img 1.7s ease-in-out infinite alternate both;
+
+  @include m.mobile-only {
+    display: none;
+  }
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes up-down-img {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+
+  &.show {
+    animation: revealUp 0.8s ease forwards;
+  }
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-desc-glass {
+  position: relative;
+  padding: 1.1rem 1.3rem;
+  margin-top: 1.6rem;
+
+  color: var(--color-text);
+  border-radius: 14px;
+
+  /* GLASS */
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* subtle neon frame */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+
+  font-weight: 600;
+  line-height: 1.65;
+  transition: all 0.3s ease;
+}
+
+/* neon accent bar */
+.hero-desc-glass::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 6px;
+
+  background: linear-gradient(to bottom, var(--color-primary), var(--glow-strong));
+
+  box-shadow: 0 0 12px var(--glow-main);
+}
+
+/* hover glow halus */
+.hero-desc-glass:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.08),
+    0 0 18px var(--glow-main);
+}
+
+/* =====================
+   DARK MODE TUNING
+=====================*/
+.dark .hero-desc-glass {
+  background: rgba(20, 24, 34, 0.55);
+  border: 1px solid rgba(125, 211, 252, 0.15);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(125, 211, 252, 0.08) inset;
+}
